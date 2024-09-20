@@ -5,13 +5,12 @@ const schema = a.schema({
         body: a.string(),
         error: a.string(),
     }),
-
     askBedrock: a
         .query()
         .arguments({
+            
             ingredients: a.string().array(),
             skills: a.string().array()
-            // Add the new 'skills' argument here
         })
         .returns(a.ref("BedrockResponse"))
         .authorization((allow) => [allow.authenticated()])

@@ -27,7 +27,7 @@ function App() {
             const formData = new FormData(event.currentTarget);
 
             const { data, errors } = await amplifyClient.queries.askBedrock({
-                ingredients: [formData.get("ingredients")?.toString() || ""],
+                ingredients: [formData.get("skillset")?.toString() || ""],
                 skills: [formData.get("skillset")?.toString() || ""],
             });
 
